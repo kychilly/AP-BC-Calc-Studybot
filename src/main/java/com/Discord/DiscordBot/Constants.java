@@ -11,10 +11,10 @@ import java.util.Arrays;
 public class Constants {
 
     // Change these prefixes to the said AP prefix. Ex: for AP HAG, change prefix to !hag and slashPrefix to hag.
-    public static String prefix = "!csa";
-    public static String slashPrefix = "csa"; // Yea you have to put a / before this everytime
+    public static String prefix = "!BCcalc";
+    public static String slashPrefix = "bccalc"; // Yea you have to put a / before this everytime
 
-    public static int numUnits = 4; // The number of units the course has. Max of 25 units or else options crash
+    public static int numUnits = 10; // The number of units the course has. Max of 25 units or else options crash
 
     public static int unitQuestionTimeoutInMinutes = 3; // (No Change) - Should be 3
     public static int unitQuestionIntervalCheckInSeconds = 30; // (No Change) - Should be 30
@@ -24,25 +24,25 @@ public class Constants {
 
     public static int reportCooldown = 10 * 1000 * 60; // (No Change) - 10 minutes(or 600,000ms) for report cooldown
 
-    public static int percentageFor3 = 42; // The percent you need to score a 3 or higher on the AP test
+    public static int percentageFor3 = 38; // The percent you need to score a 3 or higher on the AP test
 
     public static String[] titles = {"Level 1 Sleeper", "Level 2 Learner", "Level 3 Casual", "Level 4 Honored", "Level 5 AP Deity"}; // (No Change) - Profile Titles
 
     public static int[] pointTitles = {0, 100, 250, 500, 1000}; // (No Change) - Points until next title
 
-    public static int[] scorePercents = {77, 60, 42, 36}; // The percents to score a 5, 4, 3, and 2
+    public static int[] scorePercents = {57, 48, 38, 32}; // The percents to score a 5, 4, 3, and 2
 
     // (No Change) - Collegeboard logo
     public static String collegeBoardThumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN2KG3StxIW0KW9EZP4pbSYbW-_1pJw9YtdR3HsZnyGTu1as-kFCJusA-qDROINnG9vJI&usqp=CAU";
 
     // Picture of the AP course(AP classroom picture)
-    public static String APPicture = "https://images-ext-1.discordapp.net/external/O91y0nM-QHluCrrKWyJaoTagrp9FvPlPzlggBaS-NZI/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1401736371508613120/054bf5ff6af1656b42f02def5333e6ed.png?format=webp&quality=lossless&width=768&height=768";
+    public static String APPicture = "https://images-ext-1.discordapp.net/external/BxkrFO_qXkXO2gVddd4DDMzHnlg-3vzFqRogCILP3TQ/%3Fq%3Dtbn%3AANd9GcRxZdW5lLyReWdCscZfMwRaN-RCI3xiu0Re8LQmW-t2J3ormCF5XLhB8H2ArC5Go-XEdkY%26usqp%3DCAU/https/encrypted-tbn0.gstatic.com/images?format=webp&width=224&height=126";
 
     // To invite the bot to your server
-    public static String botInviteLink = "https://discord.com/oauth2/authorize?client_id=1401736371508613120&permissions=2147503104&integration_type=0&scope=bot";
+    public static String botInviteLink = "https://discord.com/oauth2/authorize?client_id=1408992624433565809&permissions=2147503104&integration_type=0&scope=bot";
 
     // Bot mention
-    public static String botMention = "<@mention>";
+    public static String botMention = "<@1408992624433565809>";
 
     // (No Change) - Integrated AI prompt
     public static String COMMAND_GUIDE_PROMPT =
@@ -72,34 +72,34 @@ public class Constants {
     public static MessageEmbed createResourcesEmbed() {
         EmbedBuilder embed = new EmbedBuilder()
                 .setTitle("📚 AP " + Constants.slashPrefix.toUpperCase() + " Study Resources")
-                .setDescription("Here are some valuable resources to help you succeed in AP Computer Science A:")
+                .setDescription("Here are some valuable resources to help you succeed in AP Calculus BC:")
                 .setColor(0x3498db)
                 .setThumbnail(Constants.collegeBoardThumbnail)
 
                 // Official College Board Resources
                 .addField("🎓 Official College Board Resources",
-                        "• [Course Overview](https://apstudents.collegeboard.org/courses/ap-computer-science-a)\n" +
-                                "• [Course Description](https://apcentral.collegeboard.org/pdf/ap-computer-science-a-course-and-exam-description.pdf)\n" +
-                                "• [Past Exam Questions](https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam)\n" +
+                        "• [Course Overview](https://apstudents.collegeboard.org/courses/ap-calculus-bc)\n" +
+                                "• [Course Description](https://apcentral.collegeboard.org/pdf/ap-calculus-bc-course-and-exam-description.pdf)\n" +
+                                "• [Past Exam Questions](https://apcentral.collegeboard.org/courses/ap-calculus-bc/exam)\n" +
                                 "• [AP Classroom](https://myap.collegeboard.org/) (Requires teacher login)", false)
 
                 // Video Tutorials
                 .addField("📺 Video Tutorials",
-                        "• [College Board AP CSA Playlist](https://www.youtube.com/playlist?list=PLoGgviqq4845xKOY11PnkE4aqdBmDx1LO)\n" +
-                                "• [Khan Academy AP CSA](https://www.khanacademy.org/computing/ap-computer-science-principles)\n" +
-                                "• [CS Awesome Interactive Textbook](https://runestone.academy/ns/books/published/csawesome/index.html)", false)
+                        "• [Khan Academy AP Calculus BC](https://www.khanacademy.org/math/ap-calculus-bc)\n" +
+                                "• [PatrickJMT Calculus BC Videos](https://www.youtube.com/playlist?list=PL1A2CSdiySGJQKniwQERk0T8gRD6vS14f)\n" +
+                                "• [MIT OpenCourseWare Calculus](https://ocw.mit.edu/courses/mathematics/18-01sc-single-variable-calculus-fall-2010/)", false)
 
                 // Practice Sites
-                .addField("💻 Practice & Coding Sites",
-                        "• [CodingBat Java Practice](https://codingbat.com/java)\n" +
-                                "• [Practice-it (UW)](https://practiceit.cs.washington.edu/)\n" +
-                                "• [Replit Java Online IDE](https://replit.com/languages/java)", false)
+                .addField("💻 Practice & Problem Solving",
+                        "• [AP Calculus BC Practice Exams](https://apstudents.collegeboard.org/courses/ap-calculus-bc/exam)\n" +
+                                "• [Paul's Online Math Notes](http://tutorial.math.lamar.edu/Classes/CalcBC/CalcBC.aspx)\n" +
+                                "• [Integral Calculator Practice](https://www.integral-calculator.com/)", false)
 
                 // Additional Help
                 .addField("🆘 Additional Help",
-                        "• [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)\n" +
-                                "• [GeeksforGeeks Java](https://www.geeksforgeeks.org/java/)\n" +
-                                "• [Stack Overflow](https://stackoverflow.com/)", false)
+                        "• [Khan Academy Calculus Notes](https://www.khanacademy.org/math/calculus-1)\n" +
+                                "• [PatrickJMT Worked Examples](https://www.youtube.com/user/patrickJMT)\n" +
+                                "• [Stack Exchange Math](https://math.stackexchange.com/)", false)
 
                 // Bot Invite
                 .addField("🤖 Bot Invite",
@@ -109,6 +109,7 @@ public class Constants {
 
         return embed.build();
     }
+
 
     // (No Change) - The total number of questions in the units
     public static int sum;
@@ -126,35 +127,73 @@ public class Constants {
                         Constants.slashPrefix + "-test` to start practicing!\n----------------------------------------------------", sum
         ));
 
-        embed.addField("**Unit 1:** Using Objects & Methods",
+        embed.addField("**Unit 1:** Limits & Continuity",
                 String.format(
-                        "🔹 **%d questions**\nFocuses on Strings, Math, method calls, and basic object interaction.\n\u200B",
+                        "🔹 **%d questions**\nCovers limits, one-sided limits, continuity, and interpreting graphs.\n\u200B",
                         Unit1.numUnit1Questions),
                 false);
 
-        embed.addField("**Unit 2:** Selection & Iteration",
+        embed.addField("**Unit 2:** Differentiation: Definition & Fundamental Rules",
                 String.format(
-                        "🔹 **%d questions**\nCovers if/else, boolean expressions, loops, and control flow.\n\u200B",
+                        "🔹 **%d questions**\nFocuses on derivative definitions, power rule, sum/difference/product/quotient rules.\n\u200B",
                         Unit2.numUnit2Questions),
                 false);
 
-        embed.addField("**Unit 3:** Class Creation",
+        embed.addField("**Unit 3:** Differentiation: Composite, Implicit, & Logarithmic Functions",
                 String.format(
-                        "🔹 **%d questions**\nIncludes constructors, fields, accessors/mutators, `this`, and encapsulation.\n\u200B",
+                        "🔹 **%d questions**\nCovers chain rule, implicit differentiation, logarithmic and exponential derivatives.\n\u200B",
                         Unit3.numUnit3Questions),
                 false);
 
-        embed.addField("**Unit 4:** Data Collections",
+        embed.addField("**Unit 4:** Applications of Differentiation",
                 String.format(
-                        "🔹 **%d questions**\nFocuses on arrays, ArrayLists, 2D arrays, traversals, search/sort, and algorithms.\n\n" +
-                                "[Visit Our Website](https://customdiscordbots.org)\n" +
-                                "Contact <@840216337119969301> for any questions",
+                        "🔹 **%d questions**\nFocuses on related rates, optimization, linearization, and motion problems.\n\u200B",
                         Unit4.numUnit4Questions),
                 false);
+
+        embed.addField("**Unit 5:** Integrals",
+                String.format(
+                        "🔹 **%d questions**\nCovers antiderivatives, definite integrals, FTC, and area under curves.\n\u200B",
+                        Unit5.numUnit5Questions),
+                false);
+
+        embed.addField("**Unit 6:** Applications of Integration",
+                String.format(
+                        "🔹 **%d questions**\nFocuses on volumes, work, average value, and accumulation functions.\n\u200B",
+                        Unit6.numUnit6Questions),
+                false);
+
+        embed.addField("**Unit 7:** Differential Equations & Slope Fields",
+                String.format(
+                        "🔹 **%d questions**\nCovers solving basic differential equations, slope fields, and exponential growth/decay.\n\u200B",
+                        Unit7.numUnit7Questions),
+                false);
+
+        embed.addField("**Unit 8:** Series & Sequences",
+                String.format(
+                        "🔹 **%d questions**\nFocuses on arithmetic/geometric series, convergence tests, and power series.\n\u200B",
+                        Unit8.numUnit8Questions),
+                false);
+
+        embed.addField("**Unit 9:** Parametric, Polar, & Vector Functions",
+                String.format(
+                        "🔹 **%d questions**\nCovers parametric equations, polar coordinates, and basic vector functions.\n\u200B",
+                        Unit9.numUnit9Questions),
+                false);
+
+        embed.addField("**Unit 10:** Advanced Topics & Review",
+                String.format(
+                        "🔹 **%d questions**\nIncludes L'Hôpital's Rule, improper integrals, and comprehensive review problems.\n\n" +
+                                "[Visit Our Website](https://customdiscordbots.org)\n" +
+                                "Contact <@840216337119969301> for any questions",
+                        Unit10.numUnit10Questions),
+                false);
+
         embed.setFooter("All questions are student-created! Please report if you see any mistakes!");
 
         event.getChannel().sendMessageEmbeds(embed.build()).queue();
     }
+
 
 
     // (No Change) - Possible end of test messages
